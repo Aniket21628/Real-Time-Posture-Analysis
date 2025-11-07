@@ -39,9 +39,9 @@ class InferenceModel:
                 print(e)
                 print('Could not load model')
                 sys.exit(-1)
-        # inference_models properties
-        self.model.conf = 0.50  # NMS confidence threshold
-        self.model.iou = 0.50  # NMS IoU threshold
+        # inference_models properties - optimized for better detection
+        self.model.conf = 0.25  # NMS confidence threshold (lowered for better detection)
+        self.model.iou = 0.45  # NMS IoU threshold (slightly lowered)
         self.model.classes = [0, 1]  # Only show these classes
         self.model.agnostic = False  # NMS class-agnostic
         self.model.multi_label = False  # NMS multiple labels per box
