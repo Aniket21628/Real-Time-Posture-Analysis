@@ -13,7 +13,7 @@ class FullscreenView(QMainWindow):
         self.label.setFixedWidth(screen_rect.width())
         self.label.setFixedHeight(screen_rect.height())
         self.setGeometry(screen_rect)
-        self.label.setStyleSheet('background-color: black;')
+        self.label.setStyleSheet('background-color: #0a0a0a;')
         self.label.setAlignment(Qt.AlignCenter)
         self.setWindowState(Qt.WindowFullScreen)
 

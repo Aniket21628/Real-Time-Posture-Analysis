@@ -92,9 +92,9 @@ class AboutWindow(QDialog):
         self.label_14.setOpenExternalLinks(True)
         self.label_15 = QLabel(self)
         self.label_15.setGeometry(QRect(150, 40, 60, 13))
-        self.label_15.setStyleSheet('QLabel{color: purple;}')
+        self.label_15.setStyleSheet('QLabel{color: #3bd6c6;}')
         self.app_icon_label.setText("")
-        self.label.setText("Sitting Posture Detector")
+        self.label.setText("PostureGuard AI")
         self.label_3.setText("<html><head/><body>Niklas Hoefflin<br/>Tim Spulak<br/>Jan B\u00f6sch<br/>Pascal "
                              "Gerber</body></html>")
         self.label_3.setStyleSheet('QLabel{font-weight: normal}')
@@ -104,9 +104,9 @@ class AboutWindow(QDialog):
         self.label_15.setText('{}'.format(model.commit_hash))
         self.label_6.setText("GitHub:")
         self.label_6.setStyleSheet('QLabel{font-weight: normal;}')
-        self.label_2.setText("<html><head/><body><p><a href=\"https://github.com/itakurah/SittingPostureDetection"
-                             "\"><span style=\" text-decoration: underline; "
-                             "color:#4269b9;\">https://github.com/itakurah/SittingPostureDetection</span></a></p"
+        self.label_2.setText("<html><head/><body><p><a href=\"https://github.com/itakurah/SittingPostureDetection\""
+                             "><span style=\" text-decoration: underline; "
+                             "color:#3bd6c6;\">https://github.com/itakurah/SittingPostureDetection</span></a></p"
                              "></body></html>")
         self.label_2.setStyleSheet('QLabel{font-weight: normal;}')
         self.label_7.setStyleSheet('QLabel{font-weight: normal;}')
@@ -128,29 +128,29 @@ class AboutWindow(QDialog):
         self.label_8.setText("Icons:")
         self.label_8.setStyleSheet('QLabel{font-weight: normal;}')
         self.label_9.setText("<html><head/><body><p><a href=\"https://icons8.com/icon/37303/informationen\"><span "
-                             "style=\" text-decoration: underline; color:#4269b9;\">Information</span></a> icon by <a "
+                             "style=\" text-decoration: underline; color:#3bd6c6;\">Information</span></a> icon by <a "
                              "href=\"https://icons8.com\"><span style=\" text-decoration: underline; "
-                             "color:#4269b9;\">Icons8</span></a></p></body></html>")
+                             "color:#3bd6c6;\">Icons8</span></a></p></body></html>")
         self.label_9.setStyleSheet('QLabel{font-weight: normal;}')
         self.label_11.setText("<html><head/><body><p><a href=\"https://icons8.com/icon/37308/rotate\"><span style=\" "
-                              "text-decoration: underline; color:#4269b9;\">Rotate</span></a> icon by <a "
+                              "text-decoration: underline; color:#3bd6c6;\">Rotate</span></a> icon by <a "
                               "href=\"https://icons8.com\"><span style=\" text-decoration: underline; "
-                              "color:#4269b9;\">Icons8</span></a></p></body></html>")
+                              "color:#3bd6c6;\">Icons8</span></a></p></body></html>")
         self.label_11.setStyleSheet('QLabel{font-weight: normal;}')
         self.label_12.setText("<html><head/><body><p><a href=\"https://icons8.com/icon/8183/expand\"><span style=\" "
-                              "text-decoration: underline; color:#4269b9;\">Expand</span></a> icon by <a "
+                              "text-decoration: underline; color:#3bd6c6;\">Expand</span></a> icon by <a "
                               "href=\"https://icons8.com\"><span style=\" text-decoration: underline; "
-                              "color:#4269b9;\">Icons8</span></a></p></body></html>")
+                              "color:#3bd6c6;\">Icons8</span></a></p></body></html>")
         self.label_12.setStyleSheet('QLabel{font-weight: normal;}')
         self.label_13.setText("<html><head/><body><p><a href=\"https://icons8.com/icon/8162/flip-horizontal\"><span "
-                              "style=\" text-decoration: underline; color:#4269b9;\">Flip Horizontal</span></a> icon "
+                              "style=\" text-decoration: underline; color:#3bd6c6;\">Flip Horizontal</span></a> icon "
                               "by <a href=\"https://icons8.com\"><span style=\" text-decoration: underline; "
-                              "color:#4269b9;\">Icons8</span></a></p></body></html>")
+                              "color:#3bd6c6;\">Icons8</span></a></p></body></html>")
         self.label_13.setStyleSheet('QLabel{font-weight: normal;}')
         self.label_14.setText("<html><head/><body><p><a href=\"https://icons8.com/icon/8171/flip-vertical\"><span "
-                              "style=\" text-decoration: underline; color:#4269b9;\">Flip Vertical</span></a> icon by "
+                              "style=\" text-decoration: underline; color:#3bd6c6;\">Flip Vertical</span></a> icon by "
                               "<a href=\"https://icons8.com\"><span style=\" text-decoration: underline; "
-                              "color:#4269b9;\">Icons8</span></a></p></body></html>")
+                              "color:#3bd6c6;\">Icons8</span></a></p></body></html>")
         self.label_14.setStyleSheet('QLabel{font-weight: normal;}')
 
     def showEvent(self, event):

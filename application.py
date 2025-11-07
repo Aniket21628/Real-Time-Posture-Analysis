@@ -30,23 +30,47 @@ if __name__ == '__main__':
     qdarktheme.enable_hi_dpi()
     app = QApplication([])
     qdarktheme.setup_theme('dark')
-    # update global stylesheet
+    # update global stylesheet with modern teal theme
     current_stylesheet = app.styleSheet()
     updated_stylesheet = current_stylesheet + """
-        QSlider {background-color: #323844;}
-        QGroupBox {background-color: #323844;}
-        QLabel {font-weight: bold;}
+        QMainWindow {background-color: #1a1a2e;}
+        QSlider {background-color: #16213e; border-radius: 5px;}
+        QGroupBox {
+            background-color: #16213e;
+            border: 2px solid #0f4c75;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-size: 13px;
+            padding-top: 10px;
+        }
+        QGroupBox::title {
+            subcontrol-origin: margin;
+            left: 10px;
+            padding: 0 5px;
+            color: #3bd6c6;
+        }
+        QLabel {font-weight: bold; color: #e8e8e8;}
         QPushButton{font-weight: bold;}
-        QCheckBox {font-weight: bold;}
-        QRadioButton {font-weight: bold;}
-        QComboBox {font-weight: bold;}
-        QToolTip {
-            background-color: #323844;
-            color: white;
-            font-size: 12px;
-            border: 1px solid #aaa;
-            border-radius: 4px;
+        QCheckBox {font-weight: bold; color: #e8e8e8;}
+        QRadioButton {font-weight: bold; color: #e8e8e8;}
+        QComboBox {
+            font-weight: bold;
+            background-color: #16213e;
+            border: 2px solid #0f4c75;
+            border-radius: 5px;
             padding: 5px;
+            color: #e8e8e8;
+        }
+        QComboBox:hover {
+            border: 2px solid #3bd6c6;
+        }
+        QToolTip {
+            background-color: #16213e;
+            color: #3bd6c6;
+            font-size: 12px;
+            border: 2px solid #0f4c75;
+            border-radius: 6px;
+            padding: 8px;
         }
     """
     app.setStyleSheet(updated_stylesheet)

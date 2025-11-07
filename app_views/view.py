@@ -28,7 +28,7 @@ class View(QMainWindow):
         # element x coordinate
         self.button_line_x = 15
         self.model = model
-        self.setWindowTitle('Sitting Posture Detector [commit {} - {}]'.format(model.get_commit_hash(), is_update()))
+        self.setWindowTitle('PostureGuard AI - Real-Time Analysis System [v{} - {}]'.format(model.get_commit_hash(), is_update()))
         self.setGeometry(100, 100, self.gui_width, self.gui_height)
         self.setFixedSize(self.gui_width, self.gui_height)
         # Set icon
@@ -49,7 +49,7 @@ class View(QMainWindow):
 
         # QLabel properties
         self.label_stream = QLabel(self)
-        self.label_stream.setStyleSheet('border: 2px solid black; background-color: black;')
+        self.label_stream.setStyleSheet('border: 3px solid #0f4c75; background-color: #0a0a0a; border-radius: 10px;')
         self.label_stream_width = 640
         self.label_stream_height = 480
         self.label_stream.setFixedWidth(self.label_stream_width)
@@ -179,7 +179,7 @@ class View(QMainWindow):
         self.status_bar = QStatusBar()
         self.status_bar.setSizeGripEnabled(False)
         self.status_bar.setProperty('last_msg_time', QDateTime.currentDateTime().toSecsSinceEpoch())
-        self.status_bar.setStyleSheet('background-color: #3555a0;font-weight: bold;')
+        self.status_bar.setStyleSheet('background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #0f4c75, stop:1 #3bd6c6); font-weight: bold; color: #ffffff; padding: 3px;')
         self.setStatusBar(self.status_bar)
         self.label_class_info = QLabel('Class: -')
         self.status_bar.addPermanentWidget(self.label_class_info)
@@ -306,62 +306,81 @@ class View(QMainWindow):
         self.button_reset_brightness.setStyleSheet('QPushButton {'
                                                    'font-size: 10px;}'
                                                    'QPushButton:enabled {'
-                                                   'background-color: #4269b9;'
-                                                   'border: 1px solid white;}'
+                                                   'background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #0f4c75, stop:1 #3bd6c6);'
+                                                   'border: 2px solid #0f4c75;'
+                                                   'border-radius: 5px;'
+                                                   'color: white;}'
                                                    'QPushButton:enabled:hover {'
-                                                   'background-color: #2c4f7a;}'
+                                                   'background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #3bd6c6, stop:1 #0f4c75);}'
                                                    )
         self.button_reset_contrast.setStyleSheet('QPushButton {'
                                                  'font-size: 10px;}'
                                                  'QPushButton:enabled {'
-                                                 'background-color: #4269b9;'
-                                                 'border: 1px solid white;}'
+                                                 'background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #0f4c75, stop:1 #3bd6c6);'
+                                                 'border: 2px solid #0f4c75;'
+                                                 'border-radius: 5px;'
+                                                 'color: white;}'
                                                  'QPushButton:enabled:hover {'
-                                                 'background-color: #2c4f7a;}'
+                                                 'background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #3bd6c6, stop:1 #0f4c75);}'
                                                  )
         self.button_rotate.setStyleSheet('QPushButton {'
                                          'font-size: 10px;}'
                                          'QPushButton:enabled {'
-                                         'background-color: #4269b9;'
-                                         'border: 1px solid white;}'
+                                         'background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #0f4c75, stop:1 #3bd6c6);'
+                                         'border: 2px solid #0f4c75;'
+                                         'border-radius: 5px;'
+                                         'color: white;}'
                                          'QPushButton:enabled:hover {'
-                                         'background-color: #2c4f7a;}')
+                                         'background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #3bd6c6, stop:1 #0f4c75);}')
         self.button_flip_horizontal.setStyleSheet('QPushButton {'
                                                   'font-size: 10px;}'
                                                   'QPushButton:enabled {'
-                                                  'background-color: #4269b9;'
-                                                  'border: 1px solid white;}'
+                                                  'background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #0f4c75, stop:1 #3bd6c6);'
+                                                  'border: 2px solid #0f4c75;'
+                                                  'border-radius: 5px;'
+                                                  'color: white;}'
                                                   'QPushButton:enabled:hover {'
-                                                  'background-color: #2c4f7a;}')
+                                                  'background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #3bd6c6, stop:1 #0f4c75);}')
         self.button_flip_vertical.setStyleSheet('QPushButton {'
                                                 'font-size: 10px;}'
                                                 'QPushButton:enabled {'
-                                                'background-color: #4269b9;'
-                                                'border: 1px solid white;}'
+                                                'background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #0f4c75, stop:1 #3bd6c6);'
+                                                'border: 2px solid #0f4c75;'
+                                                'border-radius: 5px;'
+                                                'color: white;}'
                                                 'QPushButton:enabled:hover {'
-                                                'background-color: #2c4f7a;}')
+                                                'background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #3bd6c6, stop:1 #0f4c75);}')
         self.button_refresh.setStyleSheet('QPushButton:enabled {'
-                                          'background-color: #4269b9;'
-                                          'border: 1px solid white;}'
+                                          'background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #0f4c75, stop:1 #3bd6c6);'
+                                          'border: 2px solid #0f4c75;'
+                                          'border-radius: 6px;'
+                                          'padding: 5px;'
+                                          'color: white;}'
                                           'QPushButton:enabled:hover {'
-                                          'background-color: #2c4f7a;}')
+                                          'background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #3bd6c6, stop:1 #0f4c75);}')
         self.button_information.setStyleSheet(f'QPushButton {{'
-                                              f'background-color: #4269b9;'
+                                              f'background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #0f4c75, stop:1 #3bd6c6);'
                                               f'border-radius : {size / 2};'
-                                              f'border: none;}}'
+                                              f'border: 2px solid #0f4c75;}}'
                                               f'QPushButton:enabled:hover {{'
-                                              f'background-color: #2c4f7a;}}')
+                                              f'background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #3bd6c6, stop:1 #0f4c75);}}')
 
         self.button_start.setStyleSheet('QPushButton:enabled {'
-                                        'background-color: #4269b9;'
-                                        'border: 1px solid white;}'
+                                        'background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #0f4c75, stop:1 #3bd6c6);'
+                                        'border: 2px solid #0f4c75;'
+                                        'border-radius: 6px;'
+                                        'padding: 5px;'
+                                        'color: white;}'
                                         'QPushButton:enabled:hover {'
-                                        'background-color: #2c4f7a;}')
+                                        'background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #3bd6c6, stop:1 #0f4c75);}')
         self.button_stop.setStyleSheet('QPushButton:enabled {'
-                                       'background-color: #4269b9;'
-                                       'border: 1px solid white;}'
+                                       'background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #0f4c75, stop:1 #3bd6c6);'
+                                       'border: 2px solid #0f4c75;'
+                                       'border-radius: 6px;'
+                                       'padding: 5px;'
+                                       'color: white;}'
                                        'QPushButton:enabled:hover {'
-                                       'background-color: #2c4f7a;}')
+                                       'background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #3bd6c6, stop:1 #0f4c75);}')
         self.button_fullscreen.setStyleSheet('QPushButton:enabled {'
                                              'background-color: transparent;'
                                              'border: none;}')
