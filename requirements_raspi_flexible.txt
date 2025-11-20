@@ -1,0 +1,21 @@
+# ============================================
+# Raspberry Pi 5 - FLEXIBLE VERSION Requirements
+# ============================================
+# Use this if requirements_raspi.txt has version conflicts
+# This uses flexible version constraints for better compatibility
+# Install with: pip install -r requirements_raspi_flexible.txt
+# ============================================
+
+# Core ML/DL frameworks - flexible versions
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0,<2.0.0
+
+# YOLOv5 object detection
+yolov5>=7.0.0
+
+# OpenCV - HEADLESS version (lighter, no GUI deps)
+opencv-python-headless>=4.8.0
+
+# HuggingFace hub for model downloads
+huggingface-hub>=0.20.0

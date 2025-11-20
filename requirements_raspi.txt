@@ -1,0 +1,35 @@
+# ============================================
+# Raspberry Pi 5 Optimized Requirements
+# ============================================
+# This file removes ALL PyQt5 dependencies for better performance
+# Install with: pip install -r requirements_raspi.txt
+#
+# KEY CHANGES FROM ORIGINAL:
+# ❌ Removed: PyQt5, PyQt5-Qt5, PyQt5-sip, PyQt5-stubs (saves ~400MB)
+# ❌ Removed: qt-material, pyqtdarktheme (UI theming not needed)
+# ❌ Removed: torchaudio (not used in this project)
+# ✅ Changed: opencv-python → opencv-python-headless (lighter, no GUI deps)
+# ✅ Kept: Core ML libraries for YOLOv5 inference
+#
+# EXPECTED INSTALL SIZE: ~400MB (vs ~800MB with PyQt5)
+# EXPECTED MEMORY USAGE: ~250-400MB (vs ~600-800MB with PyQt5)
+# ============================================
+
+# Core ML/DL frameworks
+# Updated to newer versions (2.2.0 no longer available)
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0,<2.0.0
+
+# YOLOv5 object detection
+yolov5==7.0.11
+
+# OpenCV - HEADLESS version (NO Qt/GUI dependencies!)
+# This is the key optimization - much lighter than opencv-python
+opencv-python-headless==4.8.1.78
+
+# HuggingFace hub for model downloads
+huggingface-hub==0.24.7
+
+# OPTIONAL: System monitoring (can be removed to save 2MB)
+# psutil==5.9.5
